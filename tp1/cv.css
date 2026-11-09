@@ -1,9 +1,56 @@
 body {
-    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    line-height: 1.5;
+    background-color: #e6eaee;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Titres */
+h1 {
+    color: #3b7a8c;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #3b7a8c;
+    padding-bottom: 4px;
+    margin-top: 36px;
+}
+
+/* Le premier h1 est ton nom */
+h1:first-of-type {
+    font-size: 2.4rem;
+    border-bottom: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Tableaux */
 table {
     background-color: white;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #c9d1d8;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #3b7a8c;
+    color: white;
+}
+
+/* Première colonne en gras (dates, rubriques) */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Liens */
+a {
+    color: #2a6f82;
 }
 
 a:hover {
