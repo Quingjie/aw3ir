@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-
+ 
 /* Titres */
 h1 {
     color: #3b7a8c;
@@ -17,56 +17,67 @@ h1 {
     padding-bottom: 4px;
     margin-top: 36px;
 }
-
+ 
+/* Le premier h1 est ton nom */
 h1:first-of-type {
     font-size: 2.4rem;
     border-bottom: none;
     margin-top: 0;
     margin-bottom: 0;
 }
-
+ 
+/* Les titres cliquables gardent la couleur du titre */
+h1 a {
+    color: inherit;
+}
+ 
+h2 {
+    color: #3b7a8c;
+}
+ 
 /* Tableaux */
 table {
     background-color: white;
     border-collapse: collapse;
 }
-
+ 
 th, td {
     border: 1px solid #c9d1d8;
     padding: 10px 12px;
     text-align: left;
     vertical-align: top;
 }
-
+ 
 th {
     background-color: #3b7a8c;
     color: white;
 }
-
+ 
 /* Première colonne en gras (dates, rubriques) */
 td:first-child {
     font-weight: bold;
 }
-
+ 
 /* Liens */
 a {
     color: #2a6f82;
 }
-
+ 
 a:hover {
     color: orange;
 }
-
-/* Lignes impaires des tableaux*/
+ 
+/* Lignes impaires des tableaux */
 tr:nth-child(odd) {
     background-color: #cfe3ea;
 }
-
-/*Changement de couleur de la ligne lors du hover*/
+ 
+/* Au survol de la souris, la ligne change de couleur */
 tr:hover {
     background-color: #ffd699;
 }
-
+ 
+/* Petits écrans : largeur maximale de 600px */
 @media only screen and (max-width: 600px) {
     body {
         background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
