@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f2f5;
+}
+ 
+/* Alignement des labels et des champs */
+label {
+    width: 150px;
+    display: inline-block;
+}
+ 
+input {
+    width: 250px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 1rem;
+    box-sizing: border-box; /* margin et padding n'changent pas la largeur */
+}
+ 
+/* Le formulaire */
+form {
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    max-width: 520px;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+}
+ 
+/* Le bouton d'envoi */
+.btn-primary {
+    border-radius: 5px;
+    padding: 6px 12px;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
