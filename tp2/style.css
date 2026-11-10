@@ -15,7 +15,7 @@ input {
     border-radius: 5px;
     border: 1px solid gray;
     font-size: 1rem;
-    box-sizing: border-box; /* margin et padding n'changent pas la largeur */
+    box-sizing: border-box; /* margin et padding ne changent pas la largeur */
 }
 
 /* Le formulaire */
@@ -62,6 +62,40 @@ input:valid + .icon-ok {
 /* Page action.html : le lien de retour et le bloc de résultat */
 a.btn-primary {
     display: inline-block;
+}
+
+.resultat{
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    max-width: 520px;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+}
+ 
+/* Texte du résultat plus aéré */
+.resultat {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+ 
+/* Les valeurs saisies ressortent */
+.resultat span {
+    font-weight: bold;
+    color: #0d6efd;
+}
+ 
+/* Liens de l'adresse et de l'e-mail */
+.resultat a {
+    color: #0d6efd;
+}
+ 
+.resultat a:hover {
+    color: orange;
+}
+ 
+/* Boutons un peu plus foncés au survol */
+.btn-primary:hover {
+    background-color: #0b5ed7;
 }
 
 div {
