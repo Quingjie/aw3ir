@@ -1,39 +1,100 @@
 <!doctype html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TP4</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <title>TP4 - Fonctionnalités HTML5</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+        <!-- CSS boostrap -->
+        <link rel="stylesheet" href="css/bootstrap.css" />
 
-    <style>
-        body {
-            background-color: #e9ebee;
-            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-            font-size: 16px;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-    </style>
+        <!-- librairie Javascript de boostrap pour pouvoir utiliser les composants interactifs (modal https://getbootstrap.com/docs/5.1/components/modal/ , collapse...) -->
+        <script src="js/bootstrap.bundle.js"></script>
+        <script src="js/gps.js"></script>
+        <script src="js/form-validation.js"></script>
+    </head>
 
-    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-    <!--<link rel="stylesheet" href="style.css">-->
-    <!--<script src="main.js"></script>-->
-</head>
+    <body>
+        <div class="container">
+            <nav class="mt-3">
+                <a href="..">🏠 Index</a> / TP4
+            </nav>
 
-<body>
-    <nav>
-        <a href="..">🏠 Index</a> / TP4
-    </nav>
-    <h1>TP4</h1>
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <img src="../galilee.png" alt="Logo Galilee" />
-</body>
+            <h1 class="my-4">Formulaire</h1>
+
+            <form novalidate> <!-- novalidate : Javascript fait la validation-->
+
+                <!-- Nom -->
+                <div class="row mb-3">
+                    <label for="lastname" class="col-sm-2 col-form-label">Nom</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="lastname"/>
+                    </div>
+                </div>
+
+                <!-- Prenom -->
+                <div class="row mb-3">
+                    <label for="firstname" class="col-sm-2 col-form-label">Prénom</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="firstname"/>
+                    </div>
+                </div>
+
+                <!-- Date de naissance -->
+                <div class="row mb-3">
+                    <label for="birthday" class="col-sm-2 col-form-label">Date de Naissance</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="birthday"/>
+                    </div>
+                </div>
+
+                <!-- Adresse -->
+                <div class="row mb-3">
+                    <label for="address" class="col-sm-2 col-form-label">Adresse</label>
+                    <div class="col-sm-10">
+                        <div class="col-sm-10">
+                            <!-- input-group : le bouton GPS est collé au champ -->
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="address"/>
+                                <button type="button" class="btn btn-outline-primary" id="gps">GPS</button>
+                            </div>
+                            <!-- la carte OpenStreetMap s'affichera ici -->
+                            <div id="map" class="mt-2"></div>
+                        </div>                    
+                    </div>      
+                </div>
+
+                <!--Adresse mail-->
+                <div class="row mb-3">
+                    <label for="email" class="col-sm-2 col-form-label">Adresse mail</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email"/>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+
+            <!-- Fenêtre modale-->
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">...</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 
 </html>
