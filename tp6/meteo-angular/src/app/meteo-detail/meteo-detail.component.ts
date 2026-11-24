@@ -11,6 +11,7 @@ import { MeteoService } from "../services/meteo.service";
 export class MeteoDetailComponent implements OnInit {
   meteo: any;
   latlon: string = "";
+  forecast: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +36,16 @@ export class MeteoDetailComponent implements OnInit {
           this.latlon = `${this.meteo.coord.lat},${this.meteo.coord.lon}`;
         })
         .catch((fail) => (this.meteo = { message: fail }));
+
+        // météo sur 5 jours : on garde seulement les prévisions de midi
+        this.meteoService
+          .getForecast(name)
+          .then((response) => {
+            this.forecast = response.list.filter((item: any) =>
+              item.dt_txt.includes("12:00:00")
+            );
+          })
+          .catch(() => (this.forecast = []));
     }
   }
 }
