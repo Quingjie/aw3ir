@@ -1,0 +1,58 @@
+<!-- meteo de la ville selectionnée -->
+<div *ngIf="meteo && meteo.cod == 200">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/">🏠</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Météo pour {{meteo.name}}
+      </li>
+    </ol>
+  </nav>
+
+  <div class="card" style="width:300px; margin: 0 auto">
+    <div class="card-header">
+      {{ meteo.name }} / {{ meteo.dt * 1000 | date : "EEEE d LLLL HH:mm" }}
+    </div>
+    <a
+      class="card-body pb-0"
+      href="http://maps.google.com/maps?q={{ latlon }}&ll={{ latlon }}&z=5"
+      target="_blank"
+    >
+      📍 Voir sur la carte
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">
+        <i [class]="'wi wi-owm-day-' + meteo.weather[0].id"></i>
+        {{meteo.main.temp}}
+        <i class="wi wi-celsius"></i>
+      </h5>
+      <p class="card-text">{{meteo.weather[0].description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <i class="wi wi-cloud"></i> Nuage: {{meteo.clouds.all}}%
+      </li>
+      <li class="list-group-item">
+        <i class="wi wi-humidity"></i> Humidité: {{meteo.main.humidity}}%
+      </li>
+      <li class="list-group-item">
+        <i class="wi wi-windy"></i> Vent: {{meteo.wind.speed}} m/s
+      </li>
+      <li class="list-group-item">
+        <i class="wi wi-sunrise"></i> Levé du soleil: {{ meteo.sys.sunrise * 1000 | date : "H:mm" }}
+      </li>
+      <li class="list-group-item">
+        <i class="wi wi-sunset"></i> Couché du soleil: {{ meteo.sys.sunset * 1000 | date : "H:mm" }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="alert alert-danger" *ngIf="meteo && meteo.cod != 200">
+  {{meteo.message}}
+</div>
+
+<hr />
+{{meteo | json}}
