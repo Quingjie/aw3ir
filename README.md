@@ -52,3 +52,4 @@ Les énoncés sont dans le dépôt du professeur : https://github.com/bilelz/aw3
 - Navigation avec le routeur Angular : la page `/meteo/:name` affiche la météo de la ville choisie.
 - Service `MeteoService` pour les appels à OpenWeatherMap, et dates mises en forme avec le filtre `date` (en français).
 - Version compilée (`ng build`) dans [tp6/meteo-angular/build/browser/](tp6/meteo-angular/build/browser/), publiée sur GitHub Pages.
+- Prévisions sur 5 jours (API forecast d'OpenWeatherMap), affichées dans un tableau.
